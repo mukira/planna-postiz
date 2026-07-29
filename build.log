@@ -1,0 +1,11 @@
+DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+            Install the buildx component to build images with BuildKit:
+            https://docs.docker.com/go/buildx/
+
+Sending build context to Docker daemon  21.34MB
+Step 1/4 : FROM ghcr.io/gitroomhq/postiz-app:latest
+ ---> edcc9a8e3bfa
+Step 2/4 : USER root
+ ---> Running in dee45e37b779
+
+got 3 SIGTERM/SIGINTs, forcefully exiting

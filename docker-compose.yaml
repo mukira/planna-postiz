@@ -109,8 +109,10 @@ services:
       # LINK_DRIP_SHORT_LINK_DOMAIN: "dripl.ink"
 
     volumes:
+      - ./patch-entrypoint.sh:/patch-entrypoint.sh
       - postiz-config:/config/
       - postiz-uploads:/uploads/
+    command: /bin/sh /patch-entrypoint.sh
     ports:
       - "4007:5000"
     deploy:
@@ -251,7 +253,7 @@ services:
     networks:
       - temporal-network
     ports:
-      - '8080:8080'
+      - '8099:8080'
 
 volumes:
   postgres-volume:

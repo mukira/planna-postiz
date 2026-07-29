@@ -1,0 +1,10 @@
+FROM ghcr.io/gitroomhq/postiz-app:latest
+USER root
+
+RUN echo "Patching Postiz to Planna..." && \
+    find /app/apps/frontend/.next -type f -name "*.js" -exec sed -i 's|Postiz|Planna|g' {} + && \
+    find /app/apps/frontend/.next -type f -name "*.js" -exec sed -i 's|postiz|planna|g' {} + && \
+    find /app/apps/frontend/.next -type f -name "*.js" -exec sed -i 's|<svg width="101" height="33" viewBox="0 0 101 33" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="22" x="8" y="3" fill="black"></rect><path d="M41.7953[^>]*>|<img src="/home-logo.png" style="height: 33px; width: auto; object-fit: contain;" />|g' {} +
+
+# Revert to standard user
+USER 1000

@@ -14,11 +14,11 @@ const useFaqList = () => {
       ? [
           {
             title: t(
-              'faq_am_i_going_to_be_charged_by_postiz',
+              'faq_am_i_going_to_be_charged_by_planna',
               'Am I going to be charged by Planna?'
             ),
             description: t(
-              'faq_to_confirm_credit_card_information_postiz_will_hold',
+              'faq_to_confirm_credit_card_information_planna_will_hold',
               'To confirm credit card information Planna will hold $2 and release it immediately, you can cancel your subscription anytime from settings without talking to a person'
             ),
           },
@@ -26,22 +26,22 @@ const useFaqList = () => {
       : []),
     {
       title: t(
-        'faq_can_i_trust_postiz_gitroom',
+        'faq_can_i_trust_planna_gitroom',
         `Can I trust ${isGeneral ? 'Planna' : 'Gitroom'}?`
       ),
       description: t(
-        'faq_postiz_gitroom_is_proudly_open_source',
+        'faq_planna_gitroom_is_proudly_open_source',
         `${
           isGeneral ? 'Planna' : 'Gitroom'
         } is proudly open-source! We believe in an ethical and transparent culture, meaning that ${
           isGeneral ? 'Planna' : 'Gitroom'
-        } will live forever. You can check out the entire code or use it for personal projects. To view the open-source repository, <a href="https://github.com/gitroomhq/postiz-app" target="_blank" style="text-decoration: underline;">click here</a>.`
+        } will live forever. You can check out the entire code or use it for personal projects. To view the open-source repository, <a href="https://github.com/gitroomhq/planna-app" target="_blank" style="text-decoration: underline;">click here</a>.`
       ),
     },
     {
       title: t('faq_what_are_channels', 'What are channels?'),
       description: t(
-        'faq_postiz_gitroom_allows_you_to_schedule_posts',
+        'faq_planna_gitroom_allows_you_to_schedule_posts',
         `${
           isGeneral ? 'Planna' : 'Gitroom'
         } allows you to schedule your posts between different channels.

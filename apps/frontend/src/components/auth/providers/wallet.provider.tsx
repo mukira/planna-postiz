@@ -32,7 +32,7 @@ import {
   TrustWalletAdapter,
   XDEFIWalletAdapter,
   TokenPocketWalletAdapter,
-} from '@postiz/wallets';
+} from '@planna/wallets';
 import {
   WalletModalProvider,
   useWalletModal,

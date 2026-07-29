@@ -121,7 +121,7 @@ export const FirstBillingComponent = () => {
           </span>{' '}
           {t('billing_who_use', 'who use')}{' '}
           {t(
-            'billing_postiz_grow_social',
+            'billing_planna_grow_social',
             'Planna To Grow Their Social Presence'
           )}
         </div>
