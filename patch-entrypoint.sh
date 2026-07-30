@@ -2,5 +2,7 @@
 echo "Applying Planna branding on the fly..."
 find /app/apps/frontend/.next -type f -name '*.js' -exec sed -i 's/Postiz/Planna/g' {} +
 find /app/apps/frontend/.next -type f -name '*.js' -exec sed -i 's/postiz/planna/g' {} +
+find /app/apps/frontend/.next -type f -name '*.js' -exec sed -i 's/#612bd3/#2563EB/g' {} +
+find /app/apps/frontend/.next -type f -name '*.js' -exec sed -i 's/612BD3/2563EB/g' {} +
 echo "Done patching! Starting Next.js..."
 exec docker-entrypoint.sh sh -c "nginx && pnpm run pm2"
