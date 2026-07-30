@@ -13,3 +13,8 @@
 - **Commit Before & After**: Always make a git commit to save working state before starting significant new changes, and commit immediately after making and verifying changes.
 - **Funny & Witty Commit Messages**: Write humorous, entertaining commit messages that maintain a lighthearted tone while still describing what was changed (e.g., `git commit -m "🎨 Refactor entrypoint script so Nginx stops throwing duplicate tantrums"`).
 - **Push to Remote**: Push commits to GitHub to ensure changes are safely backed up.
+
+## 4. Strict Container & Process Isolation (Zero Cross-Interference)
+- **Explicit Container Scope Only**: All Docker operations must explicitly target the individual project container or service (e.g., `docker compose restart postiz` or `docker compose up -d postiz`).
+- **Forbidden Global Commands**: Never execute global Docker commands that impact other running containers or system resources (e.g., `docker stop $(docker ps -q)`, `docker kill`, or `docker system prune -a`).
+- **Strict Host Boundary**: All edits, configuration changes, and volume mounts must strictly stay inside `/home/mukira/planna-postiz`. Never alter shared host system services, global Nginx configurations, or other project directories.
