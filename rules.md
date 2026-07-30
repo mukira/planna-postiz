@@ -23,3 +23,11 @@
 - **Mandatory Pre-Edit Code Audit**: Before making any code, script, or configuration edit, perform a full audit of all related files, schemas, dependent modules, and call sites. Never guess implementation details or file paths.
 - **Zero Regressions ("Don't Break Stuff Fixing Stuff")**: Fixes must address underlying root causes without causing collateral damage or breaking existing working features.
 - **Empirical Runtime Verification**: Never claim a bug is fixed or a task is complete until concrete, empirical runtime verification has been gathered (e.g., inspecting container logs, verifying HTTP response status, checking service health).
+
+## 6. Zero Hardcoded Secrets & Docker Log Rotation
+- **Strict `.env` Secret Isolation**: Never commit hardcoded API keys, OAuth secrets, JWT tokens, or passwords to `docker-compose.yaml` or source code. All secrets must reside in `.env` or environment variable fallbacks (`${SECRET_KEY:-}`) to comply with GitHub Push Protection.
+- **Docker Log Rotation Limits**: Configure Docker logging options (`max-size: "10m"`, `max-file: "3"`) to prevent container logs from filling up server disk space over time.
+
+## 7. Database Safety & PM2 Process Health Auditing
+- **Non-Destructive DB Operations**: Never run destructive database commands (e.g., `prisma db push --force-reset` or table drops) on production volumes. Always preserve user accounts, social tokens, and post history stored in `postiz-postgres`.
+- **Verify All PM2 Processes**: After starting or restarting Postiz, inspect internal process status to ensure all 3 core PM2 services (`frontend`, `backend`, `orchestrator`) are in `online` state.
